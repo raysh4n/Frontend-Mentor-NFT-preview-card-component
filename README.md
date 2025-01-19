@@ -29,22 +29,26 @@ Users should be able to:
 
 ### Screenshot
 Main
+<br>
 ![](/Screenshot%202025-01-19%20213526.png)
-
+<br>
 
 
 Active State #1 
-![](/active-state1.png)
-
+<br>
+![](//active%20state%201.png)
+<br>
 
 
 Active State #2
+<br>
 ![](/active%20state2.png)
-
+<br>
 
 Active State #3   
+<br>
 ![](/active%20state%203.png)
-
+<br>
 
 
 ### Links
