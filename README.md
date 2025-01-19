@@ -49,8 +49,8 @@ Active State #3
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [here](https://www.frontendmentor.io/solutions/nft-preview-card-component-Q8KV5DA1AK)
+- Live Site URL: [here](https://fem-nf-preview-card-component-raysh3n.netlify.app/)
 
 ## My process
 
