@@ -36,7 +36,7 @@ Main
 
 Active State #1 
 <br>
-![](//active%20state%201.png)
+![](/active%20state%201.png)
 <br>
 
 
