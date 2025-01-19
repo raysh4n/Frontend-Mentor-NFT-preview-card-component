@@ -124,6 +124,82 @@ card__background:hover {
 }
 ```
 
+
+To achieve the proper hover effect usese ::before , scrap the top left translate, uses z-index
+```css
+
+.card__background {
+	background-image: url("/images/image-equilibrium.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+
+	width: 100%;
+	aspect-ratio: 1/1;
+	border-radius: 8px;
+	position: relative; /*for overlay through ::before*/
+display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: background-color 0.3s ease /*, background-blend-mode 0.3s ease*/;
+}
+
+
+
+
+.card__view {
+	width: 3rem;
+	/* position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%); */
+	/* display: none; */
+opacity: 0;
+transition: opacity 0.3s ease; /* Smooth transition */
+z-index: 1;
+}
+
+
+
+
+
+
+.card__background::before {
+	content:"";
+	position:absolute;
+width: 100%;
+	aspect-ratio: 1/1;
+	border-radius: inherit;
+	background-color: var(--clr-cyan5);
+	opacity: 0;
+	transition:opacity 0.3s ease
+
+}
+
+
+
+ /* .card__background:hover {
+	cursor: pointer;
+	background-image: url("/images/image-equilibrium.jpg");
+	background-color: var(--clr-cyan5);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	background-blend-mode:multiply;
+}  */
+
+
+.card__background:hover::before { /*notice this selector how it's being used*/
+	cursor: pointer;
+	opacity: 1;
+}
+
+.card__background:hover .card__view {
+	/* display: block; */
+	opacity: 1;
+}
+```
+
 Some other implementation of selector. Using nth-child()
 ```css
 .card__info div:nth-child(1) { /*using nth-child() selector*/

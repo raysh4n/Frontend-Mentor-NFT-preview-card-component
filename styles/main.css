@@ -2,7 +2,7 @@
 	/* Primary */
 	--clr-soft-blue: hsla(215, 52%, 70%, 0.579);
 	--clr-cyan: hsl(178, 100%, 50%);
-
+--clr-cyan5: hsla(178, 100%, 50%, 0.5);
 	/*Neutral*/
 	--clr-white: hsl(0, 0%, 100%);
 	--clr-very-dark-blue-main: hsl(217, 54%, 11%);
@@ -73,9 +73,11 @@ body {
 	width: 100%;
 	aspect-ratio: 1/1;
 	border-radius: 8px;
-	position: relative;
-
-	transition: background-color 0.3s ease, background-blend-mode 0.3s ease;
+	position: relative; /*for overlay through ::before*/
+display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: background-color 0.3s ease /*, background-blend-mode 0.3s ease*/;
 }
 
 
@@ -83,25 +85,49 @@ body {
 
 .card__view {
 	width: 3rem;
-	position: absolute;
+	/* position: absolute;
 	top: 50%;
 	left: 50%;
-	transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%); */
 	/* display: none; */
 opacity: 0;
 transition: opacity 0.3s ease; /* Smooth transition */
+z-index: 1;
 }
 
 
 
-.card__background:hover {
+
+
+
+.card__background::before {
+	content:"";
+	position:absolute;
+width: 100%;
+	aspect-ratio: 1/1;
+	border-radius: inherit;
+	background-color: var(--clr-cyan5);
+	opacity: 0;
+	transition:opacity 0.3s ease
+
+}
+
+
+
+ /* .card__background:hover {
 	cursor: pointer;
 	background-image: url("/images/image-equilibrium.jpg");
-	background-color: var(--clr-cyan);
+	background-color: var(--clr-cyan5);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
-	background-blend-mode: multiply;
+	background-blend-mode:multiply;
+}  */
+
+
+.card__background:hover::before {
+	cursor: pointer;
+	opacity: 1;
 }
 
 .card__background:hover .card__view {
