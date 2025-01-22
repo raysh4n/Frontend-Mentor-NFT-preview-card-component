@@ -51,8 +51,8 @@ body {
 
 .card {
 	background-image: var(--clr-gradient-blue);
-	/* width: 90%; */
-	width: 22rem;
+	width: 90%;
+	max-width: 22rem;
 	margin-block: auto;
 	padding: 1.5rem;
 	/* border:1px solid; */
